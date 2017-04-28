@@ -8,4 +8,4 @@ function sum(a,b){
 
 const sum = (a, b) => a + b;
 
-exports default sum;
+module.exports = sum;
