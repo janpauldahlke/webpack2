@@ -1,2 +1,5 @@
 notes.txt
+npm_debug.log
 intro/js_modules/node_modules/**
+intro/js_modules/npm_debug.log
+intro/js_modules/build/**
