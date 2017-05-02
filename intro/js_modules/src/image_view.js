@@ -2,6 +2,13 @@
 //a little testing things
 //import $ from 'jquery';
 
+
+
+//importing css here (this might change later on, unsure of coding conventions)
+
+//css needs to be specified unlike *.js files
+import '../styles/image_view.css';
+
 const image = document.createElement('img');
 //image.src = "http://lorempixel.com/400/400/";
 image.src = './js_modules/assets/350x350.png';

@@ -18,7 +18,8 @@ const config = {
         test: /\.js$/                     //regex on filetype //apply to what files is defined here
       },
       {
-        
+        use: ['style-loader', 'css-loader'],    //use array here, due css needs to perform to both loaders style loader before css-loader!! //loaders are applied from right to left!!!              
+        test: /\.css$/
       }
     ]
   }
