@@ -24,6 +24,16 @@ const config = {
           loader: 'css-loader'
         }),
         test: /\.css$/
+      },
+      {
+        test: /\.jpe?g|png|gif|svg$/,        //img regex take care here
+        use: [
+          { //url loader needs addtional configuartion //loader handles differnt img sizes differently
+            loader: 'url-loader',
+            options: { limit : 40000}       //any image >40kb save it as single file, else include it in our bundle.js a RW DATA
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },

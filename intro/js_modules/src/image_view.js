@@ -12,10 +12,10 @@ import '../styles/image_view.css';
 const image = document.createElement('img');
 //image.src = "http://lorempixel.com/400/400/";
 image.src = './js_modules/assets/350x350.png';
-//unsauber, aber sonst kann das nild nicht geladen werden, sollte später in ein resolve überführt werden
-setTimeout(function (){
+//unsauber, aber sonst kann das bild nicht geladen werden, sollte später in ein resolve überführt werden
+//TODO integrate an image loader to prevent this
+/*setTimeout(function (){
   document.body.appendChild(image);
-}, 3000);
+}, 3000);*/
 //$('#entry').add(image);
-
-//document.body.appendChild(image);
+document.body.appendChild(image);
