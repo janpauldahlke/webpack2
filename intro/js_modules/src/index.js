@@ -4,6 +4,7 @@
 
 //es6 way
 import sum from './sum';
+import './image_view';
 
 console.log(sum(10,10));
 console.log(sum(1,13));
