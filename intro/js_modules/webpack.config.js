@@ -11,7 +11,8 @@ const config = {
   //aleays object
   output : {
     path : path.resolve(__dirname, 'build'),      //absolute path // to generate this we use a node helper // resolve can help for windows and mac and filesystems
-    filename : 'bundle.js'
+    filename : 'bundle.js',
+    publicPath: 'js_modules/build/'              //use this to achieve rendering of images larger 40kb from image-loader
   },
   module: {
     rules : [         // array of rules for loaders
@@ -27,12 +28,13 @@ const config = {
       },
       {
         test: /\.jpe?g|png|gif|svg$/,        //img regex take care here
+        exclude: /node_modules/,
         use: [
           { //url loader needs addtional configuartion //loader handles differnt img sizes differently
             loader: 'url-loader',
             options: { limit : 40000}       //any image >40kb save it as single file, else include it in our bundle.js a RW DATA
           },
-          'image-webpack-loader'
+          'image-webpack-loader?{}'         //fix build error due loader version
         ]
       }
     ]
