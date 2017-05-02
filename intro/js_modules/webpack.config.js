@@ -3,6 +3,8 @@
 // 2. output
 
 const path = require('path'); //nodeJs module
+//get TextPlugin
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   entry: './src/index.js', //relative path from where webpack.config.js is
@@ -15,14 +17,19 @@ const config = {
     rules : [         // array of rules for loaders
       {
         use: 'babel-loader',                //use property to tell what loader
-        test: /\.js$/                     //regex on filetype //apply to what files is defined here
+        test: /\.js$/                       //regex on filetype //apply to what files is defined here
       },
       {
-        use: ['style-loader', 'css-loader'],    //use array here, due css needs to perform to both loaders style loader before css-loader!! //loaders are applied from right to left!!!              
+        loader: ExtractTextPlugin.extract({ //need key loader form webpack1 cuz text extract needs this syntax
+          loader: 'css-loader'
+        }),
         test: /\.css$/
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+  ]
 };
 
 module.exports = config;
