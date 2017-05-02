@@ -8,4 +8,9 @@ function sum(a,b){
 
 const sum = (a, b) => a + b;
 
-module.exports = sum;
+// commonJs style
+//module.exports = sum;
+
+
+//es6
+export default sum;
