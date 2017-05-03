@@ -3,3 +3,4 @@ npm-debug.log
 intro/js_modules/node_modules/**
 intro/js_modules/npm_debug.log
 intro/js_modules/build/**
+intro/js_modules/.DS_Store
