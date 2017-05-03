@@ -17,8 +17,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js'       //[name] refers to entry keys
-  },
+    filename: '[name].[chunkhash].js'       //[name] refers to entry keys
+  },                                        //[chunkhash] helps by caching and new loading forthe browser
   module: {
     rules : [
       {
@@ -35,7 +35,7 @@ module.exports = {
   plugins: [
     //if any modules are duplicates in bundle and vendor, only include them in name 'vendor'
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
+      names: ['vendor', 'manifest']     //creates manifest.js
     }),
     new HtmlWebpackPlugin({
       //provide a template for this to prevent plugin to generate a simple html
