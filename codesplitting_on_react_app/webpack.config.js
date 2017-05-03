@@ -6,5 +6,18 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
+  },
+  module: {
+    rules : [
+      {
+        use: 'babel-loader',
+        test: /\.js$/,
+        exclude: /node_modules/         //exclude: do not apply babel on node_modules //save time and ressources when we assume, that node_modules come as ES5 == best practice
+      },
+      {
+        use: ['style-loader', 'css-loader'],
+        test: /\.css$/
+      }
+    ]
   }
 };

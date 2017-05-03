@@ -5,5 +5,6 @@ intro/js_modules/npm_debug.log
 intro/js_modules/build/**
 intro/js_modules/.DS_Store
 codesplitting_on_react_app/node_modules/**
+codesplitting_on_react_app/dist/**
 codesplitting_on_react_app/.DS_Store
 codesplitting_on_react_app/npm_debug.log
