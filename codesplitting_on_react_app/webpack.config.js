@@ -41,6 +41,14 @@ module.exports = {
       //provide a template for this to prevent plugin to generate a simple html
       //so integrate template and make it to condigurations
       template: './src/index.html'
+    }),
+    //for deploying on static
+    //react needs window scoped variable NODE_ENV
+    //we export this NODE_ENV to window by using DefinePlugin
+    //make usage of this in package.json script build by setting NODE_ENV=production
+    //webpack - p = minify!! production mode want it as small as possible
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV' : JSON.stringify(process.env.NODE_ENV)
     })
   ]
 };
